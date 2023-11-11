@@ -6,8 +6,8 @@ Data Science project supported by the newsAPI.org on the exposure of one movie a
 
 ## Credits
 #### Members
-Fei 
-Emilie 
-Adrien 
-Alan
+Fei  
+Emilie  
+Adrien  
+Alan  
 
