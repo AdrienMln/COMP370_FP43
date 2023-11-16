@@ -6,15 +6,15 @@ Data Science project supported by the newsAPI.org on the exposure of one movie a
 
 ## Movie List 
 
-Ballerina (2023)
-The Burial 
-The Exorcist: believer
-Monster High 2
-Dr Cheon and the lost Talisman
-Eismayer
-The Plus One 
-Unstuffed: a build a bear story 
-Shayda
+- Ballerina (2023)
+- The Burial 
+- The Exorcist: believer
+- Monster High 2
+- Dr Cheon and the lost Talisman
+- Eismayer
+- The Plus One 
+- Unstuffed: a build a bear story 
+- Shayda
 
 ## Credits
 #### Members
