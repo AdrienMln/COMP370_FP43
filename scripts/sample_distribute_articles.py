@@ -1,5 +1,6 @@
 import random
 import json
+from pathlib import Path
 OPEN_CODING_DATASET_FILENAME = 'open_coding_dataset.tsv'
 DATASET_NAME = 'movie_articles.tsv'
 MOVIE_DATA_FILENAME = 'movie_data.json'
@@ -22,16 +23,23 @@ def split_into_sublists(n, dataset):
         out.append(dataset[i*k:(i+1)*k])
     return out
     
-movie_data = json.loads(load_movie_data(MOVIE_DATA_FILENAME))
-with open('open_coding.json', 'w', encoding='utf-8') as f:
-    json.dump(movie_data, f)
-open_coding_dataset = random.sample(movie_data, k = 200)
+def main():
+    movie_data_path = Path(__file__).parent.parent/'data'/MOVIE_DATA_FILENAME
+    movie_data = json.loads(load_movie_data(movie_data_path))
+    with open('open_coding.json', 'w', encoding='utf-8') as f:
+        json.dump(movie_data, f)
+    open_coding_dataset = random.sample(movie_data, k = 200)
 
-write_to_file(DATASET_NAME, movie_data)
-write_to_file(OPEN_CODING_DATASET_FILENAME, open_coding_dataset)
+    movie_articles_tsv_path = Path(__file__).parent.parent/'data'/DATASET_NAME
+    write_to_file(movie_articles_tsv_path, movie_data)
+    movie_data_json_path = Path(__file__).parent.parent/'data'/OPEN_CODING_DATASET_FILENAME
+    write_to_file(movie_data_json_path, open_coding_dataset)
 
-open_coding_sublists = split_into_sublists(4, open_coding_dataset)
+    open_coding_sublists = split_into_sublists(4, open_coding_dataset)
 
-for i, sublist in enumerate(open_coding_sublists):
-    print(len(sublist))
-    write_to_file(f'open_coding{i+1}.tsv', sublist)
+    for i, sublist in enumerate(open_coding_sublists):
+        print(len(sublist))
+        write_to_file(f'open_coding{i+1}.tsv', sublist)
+
+if __name__ == '__main__':
+    main()
