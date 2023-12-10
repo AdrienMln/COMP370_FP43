@@ -8,7 +8,7 @@ Data Science project supported by the newsAPI.org on the exposure of one movie a
 
 - Priscilla
 - Saltburn
-- THG
+- The Hunger Games: The Ballads of Songbirds and Snakes
 - Thanksgiving
 - The Holdovers
 - The Marvels
